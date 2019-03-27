@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet } from "react-native";
 
-import { Icon } from "native-base";
+import { Container, Content, Icon } from "native-base";
+import CardComponent from "../CardComponent";
 
 class HomeTab extends Component {
   static navigationOptions = {
@@ -12,9 +13,13 @@ class HomeTab extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Home</Text>
-      </View>
+      <Container style={styles.container}>
+        <Content>
+          <CardComponent imageSource="1" likes="101" />
+          <CardComponent imageSource="2" likes="201" />
+          <CardComponent imageSource="3" likes="301" />
+        </Content>
+      </Container>
     );
   }
 }
@@ -23,7 +28,6 @@ export default HomeTab;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: "white"
   }
 });
